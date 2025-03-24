@@ -1,2 +1,2 @@
 echo "Hello from my script!"
-exit 0
+exit 1
