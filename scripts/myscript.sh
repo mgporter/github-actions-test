@@ -1,2 +1,3 @@
 echo "Hello from my script!"
-exit 1
+aws --version
+exit 0
