@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   firstjob:
     name: firstjob
@@ -16,8 +20,12 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v4.1.0
+        with:
+          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::029761961193:role/GithubTest
       - name: make scripts executable
         run: chmod +x myscript.sh
       - name: run script
         run: ./myscript.sh
-

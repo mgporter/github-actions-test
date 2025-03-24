@@ -1,3 +1,3 @@
 echo "Hello from my script!"
-aws --version
+aws ec2 describe-instances
 exit 0
