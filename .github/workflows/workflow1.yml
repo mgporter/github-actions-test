@@ -9,8 +9,13 @@ jobs:
   firstjob:
     name: firstjob
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./scripts
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+      - name: run script
+        run: ./myscript.sh
 
